@@ -1,37 +1,59 @@
-using System.Collections;
-using System.Collections.Generic;
+using Common;
 using UnityEngine;
+
 
 namespace SpaceShooter
 {
-    public class Projectile : ProjectileBase
+    public class Projectile : Entity
     {
-        /*[SerializeField] private ImpactEffect m_ImpactEffectPrefab;
+        [SerializeField] private float _velocity;
 
-        protected override void OnHit(Destructible destructible)
+        [SerializeField] private float _lifetime;
+
+        [SerializeField] private int _damage;
+
+        [SerializeField] private ImpactEffect _impactEffectPrefab;
+
+        protected void OnProjectileLifeEnd(Collider2D col, Vector2 pos)
         {
-            if (m_Parent == Player.Instance.ActiveShip)
-            {
-                Player.Instance.AddScore(destructible.ScoreValue);
-
-                if (destructible is SpaceShip)
-                {
-                    if (destructible.HitPoints <= 0)
-                        Player.Instance.AddKill();
-                }
-            }
-        }
-
-        protected override void OnProjectileLifeEnd(Collider2D col, Vector2 pos)
-        {
-            if (m_ImpactEffectPrefab != null)
-                Instantiate(m_ImpactEffectPrefab, pos, Quaternion.identity);
-
             Destroy(gameObject);
         }
-*/
-
-    }                 
- }
 
 
+        private float _timer;
+        protected Destructible _parent;
+
+        private void Update()
+        {
+            float stepLength = Time.deltaTime * _velocity;
+            Vector2 step = transform.up * stepLength;
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, stepLength);
+
+            if (hit)
+            {
+
+                Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
+
+                if (dest != null && dest != _parent)
+                {
+                    dest.ApplyDamge(_damage);
+                }
+
+                OnProjectileLifeEnd(hit.collider, hit.point);
+            }
+
+            _timer += Time.deltaTime;
+
+            if (_timer > _lifetime)
+                OnProjectileLifeEnd(hit.collider, hit.point);
+
+            transform.position += new Vector3(step.x, step.y, 0);
+        }
+
+        public void SetPatentShooter(Destructible parent)
+        {
+            _parent = parent;
+        }
+    }
+}

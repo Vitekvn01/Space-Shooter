@@ -15,8 +15,8 @@ namespace SpaceShooter
         [SerializeField] private TurretMode _mode;
         public TurretMode Mode => _mode;
 
-        [SerializeField] private ProjectileBase _projectilePrefab;
-        public ProjectileBase ProjectilePrefab => _projectilePrefab;
+        [SerializeField] private Projectile _projectilePrefab;
+        public Projectile ProjectilePrefab => _projectilePrefab;
 
         [SerializeField] private float _rateOfFire;
         public float RateOfFire => _rateOfFire;

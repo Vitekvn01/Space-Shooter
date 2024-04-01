@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace SpaceShooter
@@ -59,6 +60,8 @@ namespace SpaceShooter
             _rigid.mass = _mass;
 
             _rigid.inertia = 1;
+
+            InitOffensive();
         }
 
         protected override void OnDeath()
@@ -70,6 +73,7 @@ namespace SpaceShooter
         private void FixedUpdate()
         {
             UpdateRigidBody();
+            UpdateEnergyRegen();
         }
 
         #endregion
@@ -96,6 +100,67 @@ namespace SpaceShooter
                     _turrets[i].Fire();
                 }
             }
+        }
+
+        [SerializeField] private int _maxEnergy;
+        [SerializeField] private int _maxAmmo;
+        [SerializeField] private int _energyRegenPerSecond;
+
+        private float _primaryEnergy;
+        private int _secondaryAmmo;
+
+        public void AddEnergy(int e)
+        {
+            _primaryEnergy = math.clamp(_primaryEnergy + e, 0, _maxEnergy);
+        }
+
+        public void AddAmmo(int ammo)
+        {
+            _secondaryAmmo = math.clamp(_secondaryAmmo + ammo, 0, _maxAmmo);
+        }
+
+        private void InitOffensive()
+        {
+            _primaryEnergy = _maxEnergy;
+            _secondaryAmmo = _maxAmmo;
+        }
+
+        private void UpdateEnergyRegen()
+        {
+            _primaryEnergy += (float)_energyRegenPerSecond * Time.fixedDeltaTime;
+            _primaryEnergy = math.clamp(_primaryEnergy, 0, _maxEnergy);
+        }
+
+        public bool DrawAmmo(int count)
+        {
+            if (count == 0)
+            {
+                return true;
+            }
+
+            if (_secondaryAmmo >= count)
+            {
+                _secondaryAmmo -= count;
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool DrawEnergy(int count)
+        {
+            if (count == 0)
+            {
+                return true;
+            }
+
+            if (_primaryEnergy >= count)
+            {
+                _primaryEnergy -= count;
+                return true;
+            }
+
+            return false;
         }
     }
 }

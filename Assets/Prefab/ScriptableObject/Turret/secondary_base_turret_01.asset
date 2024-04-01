@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb5c00e04b63b144cb6e1bdb7ea2f48d, type: 3}
   m_Name: secondary_base_turret_01
   m_EditorClassIdentifier: 
-  _mode: 0
-  _projectilePrefab: {fileID: 0}
-  _rateOfFire: 0
+  _mode: 1
+  _projectilePrefab: {fileID: 4767735442729053282, guid: 40b3d5ed09fcce342aad17eb37487915, type: 3}
+  _rateOfFire: 1
   _energyUsage: 0
-  _ammoUsage: 0
+  _ammoUsage: 1
   _launchSFX: {fileID: 0}

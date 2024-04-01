@@ -1,3 +1,4 @@
+
 using SpaceShooter;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,6 +27,10 @@ namespace SpaceShooter
         [SerializeField] private SpaceShip _targetShip;
         [SerializeField] private VirtualJoystick _mobilelJoystick;
 
+        [SerializeField] private PointerClickHold _mobileFirePrimary;
+        [SerializeField] private PointerClickHold _mobileFireSecondary;
+
+
         private void Start()
         {
             if (Application.isMobilePlatform)
@@ -38,6 +43,8 @@ namespace SpaceShooter
                 if (_controlMode == ControlMode.Keyboard)
                 {
                     _mobilelJoystick.gameObject.SetActive(false);
+                    _mobileFirePrimary.gameObject.SetActive(false);
+                    _mobileFireSecondary.gameObject.SetActive(false);
                 }
                 else
                 {
@@ -63,6 +70,18 @@ namespace SpaceShooter
 
             _targetShip.ThrustControl = dir.y;
             _targetShip.TorqueControl = -dir.x;
+
+
+            if (_mobileFirePrimary.IsHold == true)
+            {
+                _targetShip.Fire(TurretMode.Primary);
+            }
+            if (_mobileFireSecondary.IsHold == true)
+            {
+                _targetShip.Fire(TurretMode.Secondary);
+            }
+
+
         }
 
         private void ControlKeyboard()
@@ -72,6 +91,17 @@ namespace SpaceShooter
 
             _targetShip.ThrustControl = thrust;
             _targetShip.TorqueControl = torque;
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                _targetShip.Fire(TurretMode.Primary);
+            }
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                _targetShip.Fire(TurretMode.Secondary);
+            }
+
         }
 
         public void SetTargetShip(SpaceShip ship)

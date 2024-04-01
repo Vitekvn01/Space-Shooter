@@ -34,7 +34,11 @@ public class Turret : MonoBehaviour
 
         if (_refireTimer > 0) return;
 
-        ProjectileBase projectile = Instantiate(_turretProperties.ProjectilePrefab).GetComponent<ProjectileBase>();
+        if(_ship.DrawEnergy(_turretProperties.EnergyUsage) == false) return;
+
+        if (_ship.DrawAmmo(_turretProperties.AmmoUsage) == false) return;
+
+        Projectile projectile = Instantiate(_turretProperties.ProjectilePrefab).GetComponent<Projectile>();
         projectile.transform.position = transform.position;
         projectile.transform.up = transform.up;
 

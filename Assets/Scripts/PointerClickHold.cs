@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using Common;
 
-namespace Common
+namespace SpaceShooter
 {
     public class PointerClickHold : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {

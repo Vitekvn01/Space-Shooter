@@ -62,7 +62,6 @@
     <Compile Include="Assets\Scripts\Turret.cs" />
     <Compile Include="Assets\Scripts\LevelBoundaryLimmiter.cs" />
     <Compile Include="Assets\Scripts\GravityWell.cs" />
-    <Compile Include="Assets\Scripts\ProjectileBase.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\MovementController.cs" />
     <Compile Include="Assets\Scripts\PushTaskDestroy.cs" />
@@ -76,6 +75,7 @@
     <Compile Include="Assets\Scripts\SingletonBase.cs" />
     <Compile Include="Assets\Scripts\SpaceShip.cs" />
     <Compile Include="Assets\Scripts\SyncTransform.cs" />
+    <Compile Include="Assets\Scripts\ImpactEffect.cs" />
     <Compile Include="Assets\Scripts\VirtualJoystick.cs" />
     <Compile Include="Assets\Scripts\PointerClickHold.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
