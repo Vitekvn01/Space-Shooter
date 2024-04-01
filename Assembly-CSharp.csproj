@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\SpaceShip.cs" />
     <Compile Include="Assets\Scripts\SyncTransform.cs" />
     <Compile Include="Assets\Scripts\VirtualJoystick.cs" />
+    <Compile Include="Assets\Scripts\PointerClickHold.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\FinishZone.cs" />
   </ItemGroup>

@@ -388,6 +388,7 @@
 "Assets/Scripts/LevelBoundaryLimmiter.cs"
 "Assets/Scripts/MovementController.cs"
 "Assets/Scripts/Player.cs"
+"Assets/Scripts/PointerClickHold.cs"
 "Assets/Scripts/Projectile.cs"
 "Assets/Scripts/ProjectileBase.cs"
 "Assets/Scripts/PushTaskDestroy.cs"

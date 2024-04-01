@@ -593,7 +593,7 @@ Transform:
   m_GameObject: {fileID: 641543095}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08618608, y: 2.4398649, z: 0.024847869}
+  m_LocalPosition: {x: 0, y: 0.428, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -612,7 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 1
-  _turretProperties: {fileID: 0}
+  _turretProperties: {fileID: 11400000, guid: 22b84f411f50bd546b2f5494eb768a8f, type: 2}
 --- !u!1 &701304808
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,7 +911,7 @@ Transform:
   m_GameObject: {fileID: 882505531}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08618608, y: 2.4398649, z: 0.024847869}
+  m_LocalPosition: {x: -0.235, y: 0.467, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -957,7 +957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 0
-  _turretProperties: {fileID: 0}
+  _turretProperties: {fileID: 11400000, guid: af9f9da59fa0dc94a976115590986d43, type: 2}
 --- !u!114 &1135258028 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7840086912487727433, guid: 2117704339dcf1b42a0e520ec4c5221e, type: 3}
@@ -1154,7 +1154,7 @@ Transform:
   m_GameObject: {fileID: 1990632549}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08618608, y: 2.4398649, z: 0.024847869}
+  m_LocalPosition: {x: 0.23, y: 0.469, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1173,7 +1173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 0
-  _turretProperties: {fileID: 0}
+  _turretProperties: {fileID: 11400000, guid: af9f9da59fa0dc94a976115590986d43, type: 2}
 --- !u!4 &2060317860 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3954834131655216819, guid: 2117704339dcf1b42a0e520ec4c5221e, type: 3}
