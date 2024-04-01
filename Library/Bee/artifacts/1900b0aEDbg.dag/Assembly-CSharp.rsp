@@ -383,6 +383,7 @@
 "Assets/Scripts/Destructible.cs"
 "Assets/Scripts/Entity.cs"
 "Assets/Scripts/EntitySpawner.cs"
+"Assets/Scripts/EntitySpawnerDebris.cs"
 "Assets/Scripts/ExplosionPlay.cs"
 "Assets/Scripts/FinishZone.cs"
 "Assets/Scripts/GravityWell.cs"

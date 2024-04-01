@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\ExplosionPlay.cs" />
     <Compile Include="Assets\Scripts\LevelBoundary.cs" />
     <Compile Include="Assets\Scripts\Powerup.cs" />
+    <Compile Include="Assets\Scripts\EntitySpawnerDebris.cs" />
     <Compile Include="Assets\Scripts\PowerupStats.cs" />
     <Compile Include="Assets\Scripts\CollisionDamageApplicator.cs" />
     <Compile Include="Assets\Scripts\TurretProperties.cs" />

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace SpaceShooter
 {
-    public class Destructible : MonoBehaviour
+    public class Destructible : Entity
     {
         #region Properties
 

@@ -10,50 +10,50 @@ namespace SpaceShooter
             Start,
             Loop
         }
-        [SerializeField] private Entity[] m_EntityPrefabs;
+        [SerializeField] private Entity[] _entityPrefabs;
 
-        [SerializeField] private CircleArea m_Area;
+        [SerializeField] private CircleArea _area;
 
-        [SerializeField] private SpawnMode m_SpawnMode;
+        [SerializeField] private SpawnMode _spawnMode;
 
-        [SerializeField] private int m_NumSpawn;
+        [SerializeField] private int _numSpawn;
 
-        [SerializeField] private float m_RespawnTime;
+        [SerializeField] private float _respawnTime;
 
-        private float m_Timer;
+        private float _timer;
 
         private void Start()
         {
-            if (m_SpawnMode == SpawnMode.Start)
+            if (_spawnMode == SpawnMode.Start)
             {
                 SpawnEntities();
             }
 
-            m_Timer = m_RespawnTime;
+            _timer = _respawnTime;
         }
 
         private void Update()
         {
-            if (m_Timer > 0)
-                m_Timer -= Time.deltaTime;
+            if (_timer > 0)
+                _timer -= Time.deltaTime;
 
-            if (m_SpawnMode == SpawnMode.Loop && m_Timer < 0)
+            if (_spawnMode == SpawnMode.Loop && _timer < 0)
             {
                 SpawnEntities();
 
-                m_Timer = m_RespawnTime;
+                _timer = _respawnTime;
             }
         }
 
         private void SpawnEntities()
         {
-            for (int i = 0; i < m_NumSpawn; i++)
+            for (int i = 0; i < _numSpawn; i++)
             {
-                int index = Random.Range(0, m_EntityPrefabs.Length);
+                int index = Random.Range(0, _entityPrefabs.Length);
 
-                GameObject e = Instantiate(m_EntityPrefabs[index].gameObject);
+                GameObject e = Instantiate(_entityPrefabs[index].gameObject);
 
-                e.transform.position = m_Area.GetRandomInsideZone();
+                e.transform.position = _area.GetRandomInsideZone();
             }
         }
     }   
