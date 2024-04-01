@@ -35,6 +35,8 @@ namespace SpaceShooter
 
             _ship = newPlayerShip.GetComponent<SpaceShip>();
 
+            _ship.EventOnDeath.AddListener(OnShopDeath);
+
             _cameraController.SetTarget(_ship.transform);
             _movementController.SetTargetShip(_ship);
 

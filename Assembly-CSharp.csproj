@@ -62,11 +62,14 @@
     <Compile Include="Assets\Scripts\Turret.cs" />
     <Compile Include="Assets\Scripts\LevelBoundaryLimmiter.cs" />
     <Compile Include="Assets\Scripts\GravityWell.cs" />
+    <Compile Include="Assets\Scripts\CircleArea.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\MovementController.cs" />
     <Compile Include="Assets\Scripts\PushTaskDestroy.cs" />
     <Compile Include="Assets\Scripts\ExplosionPlay.cs" />
     <Compile Include="Assets\Scripts\LevelBoundary.cs" />
+    <Compile Include="Assets\Scripts\Powerup.cs" />
+    <Compile Include="Assets\Scripts\PowerupStats.cs" />
     <Compile Include="Assets\Scripts\CollisionDamageApplicator.cs" />
     <Compile Include="Assets\Scripts\TurretProperties.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
@@ -75,11 +78,13 @@
     <Compile Include="Assets\Scripts\SingletonBase.cs" />
     <Compile Include="Assets\Scripts\SpaceShip.cs" />
     <Compile Include="Assets\Scripts\SyncTransform.cs" />
+    <Compile Include="Assets\Scripts\PowerupWeapon.cs" />
     <Compile Include="Assets\Scripts\ImpactEffect.cs" />
     <Compile Include="Assets\Scripts\VirtualJoystick.cs" />
     <Compile Include="Assets\Scripts\PointerClickHold.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\FinishZone.cs" />
+    <Compile Include="Assets\Scripts\EntitySpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

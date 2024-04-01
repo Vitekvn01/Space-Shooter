@@ -203,7 +203,7 @@ Transform:
   m_GameObject: {fileID: 2747650678285062747}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.23, y: 0.469, z: 0}
+  m_LocalPosition: {x: 0.23, y: 0.492, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -249,7 +249,7 @@ Transform:
   m_GameObject: {fileID: 3202563294063589927}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.428, z: 0}
+  m_LocalPosition: {x: 0, y: 0.471, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 1
-  _turretProperties: {fileID: 11400000, guid: 22b84f411f50bd546b2f5494eb768a8f, type: 2}
+  _turretProperties: {fileID: 0}
 --- !u!1 &3359482068754152951
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,6 +628,9 @@ MonoBehaviour:
   - {fileID: 1455266673885463302}
   - {fileID: 5016403386890015407}
   - {fileID: 6906169698902700383}
+  _maxEnergy: 20
+  _maxAmmo: 10
+  _energyRegenPerSecond: 1
 --- !u!114 &5806912709416541881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,7 +683,7 @@ Transform:
   m_GameObject: {fileID: 5227403243648466588}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.221, y: 0.467, z: 0}
+  m_LocalPosition: {x: -0.238, y: 0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
