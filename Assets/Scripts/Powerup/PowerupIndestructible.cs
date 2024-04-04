@@ -4,9 +4,11 @@ namespace SpaceShooter
 {
     public class PowerupIndestructible : Powerup
     {
+        [Header("Таймер бонуса :")]
+        [SerializeField] private float _time;
         protected override void OnPickedUp(SpaceShip ship)
         {
-            ship.ApplyIndestructible(10);
+            ship.ApplyIndestructible(_time);
         }
     }
 }

@@ -19,8 +19,8 @@ namespace SpaceShooter
         private int _currentHitPoints;
         public int CurrentHitPoints => _currentHitPoints;
 
-        private float _timer = 0;
-        private float _timerIndestructible;
+        private float _timerIndestructible = 0;
+        private float _timeOffIndestructible;
         private bool _isTimerOffIndestructible = false;
 
         #endregion
@@ -36,11 +36,11 @@ namespace SpaceShooter
         {
             if (_isTimerOffIndestructible == true)
             {
-                _timer += Time.deltaTime;
-                if (_timer >= _timerIndestructible)
+                _timerIndestructible += Time.deltaTime;
+                if (_timerIndestructible >= _timeOffIndestructible)
                 {
                     _indestructible = false;
-                    _timer = 0;
+                    _timerIndestructible = 0;
                     _isTimerOffIndestructible = false;
                 }
 
@@ -67,7 +67,7 @@ namespace SpaceShooter
         {
             if(_indestructible) return;
             _indestructible = true;
-            _timerIndestructible = time;
+            _timeOffIndestructible = time;
             _isTimerOffIndestructible = true;
 
         }

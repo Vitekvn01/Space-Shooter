@@ -40,6 +40,12 @@ namespace SpaceShooter
         [Header("explosionDestroy")]
         [SerializeField] private GameObject _explosionPrefabs;
 
+        private float _timerSpeedUp;
+        private float _timeOffSpeedUp;
+        private bool _isSpeedUp = false;
+
+        private float _oldThrust;
+
         #region Public API
         /// <summary>
         /// ”правление линейной т€гой -1.0 до +1.0
@@ -49,6 +55,8 @@ namespace SpaceShooter
         /// ”правление вращательной т€гой -1.0 до +1.0
         /// </summary>
         public float TorqueControl { get; set; }
+
+
 
         #endregion
 
@@ -63,12 +71,32 @@ namespace SpaceShooter
             _rigid.inertia = 1;
 
             InitOffensive();
+
+            _oldThrust = _thrust;
         }
 
         protected override void OnDeath()
         {
             Instantiate(_explosionPrefabs, transform.position, transform.rotation);
             base.OnDeath();
+        }
+
+        private void Update()
+        {
+            if (_isSpeedUp == true)
+            {
+                _timerSpeedUp += Time.deltaTime;
+                if (_timerSpeedUp >= _timeOffSpeedUp)
+                {
+                    _timerSpeedUp = 0;
+                    _isSpeedUp = false; ;
+                }
+
+            }
+            else
+            {
+                _thrust = _oldThrust;
+            }
         }
 
         private void FixedUpdate()
@@ -120,17 +148,6 @@ namespace SpaceShooter
             _secondaryAmmo = math.clamp(_secondaryAmmo + ammo, 0, _maxAmmo);
         }
 
-        private void InitOffensive()
-        {
-            _primaryEnergy = _maxEnergy;
-            _secondaryAmmo = _maxAmmo;
-        }
-
-        private void UpdateEnergyRegen()
-        {
-            _primaryEnergy += (float)_energyRegenPerSecond * Time.fixedDeltaTime;
-            _primaryEnergy = math.clamp(_primaryEnergy, 0, _maxEnergy);
-        }
 
         public bool DrawAmmo(int count)
         {
@@ -170,6 +187,31 @@ namespace SpaceShooter
             {
                 _turrets[i].AssignLoadout(prop);
             }
+        }
+
+        public void ApplySpeedUp(float time, float speed)
+        {
+            _isSpeedUp = true;
+            _timeOffSpeedUp = time;
+            SpeedUp(speed);
+
+        }
+
+        private void InitOffensive()
+        {
+            _primaryEnergy = _maxEnergy;
+            _secondaryAmmo = _maxAmmo;
+        }
+
+        private void UpdateEnergyRegen()
+        {
+            _primaryEnergy += (float)_energyRegenPerSecond * Time.fixedDeltaTime;
+            _primaryEnergy = math.clamp(_primaryEnergy, 0, _maxEnergy);
+        }
+
+        private void SpeedUp(float speed)
+        {
+            _thrust = _thrust * speed;
         }
     }
 }
