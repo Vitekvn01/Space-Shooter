@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{28FCF307-BCEB-DF00-C466-08C29A16E02D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -58,34 +59,35 @@
     <Analyzer Include="G:\Unity\Hub\Editor\2022.3.5f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Entity.cs" />
-    <Compile Include="Assets\Scripts\Turret.cs" />
-    <Compile Include="Assets\Scripts\LevelBoundaryLimmiter.cs" />
+    <Compile Include="Assets\Scripts\Input\VirtualJoystick.cs" />
+    <Compile Include="Assets\Scripts\Level\LevelBoundary.cs" />
+    <Compile Include="Assets\Scripts\Powerup\PowerupStats.cs" />
     <Compile Include="Assets\Scripts\GravityWell.cs" />
-    <Compile Include="Assets\Scripts\CircleArea.cs" />
-    <Compile Include="Assets\Scripts\Projectile.cs" />
-    <Compile Include="Assets\Scripts\MovementController.cs" />
+    <Compile Include="Assets\Scripts\Spawner\CircleArea.cs" />
+    <Compile Include="Assets\Scripts\Powerup\PowerupWeapon.cs" />
+    <Compile Include="Assets\Scripts\Turret\Turret.cs" />
+    <Compile Include="Assets\Scripts\Powerup\Powerup.cs" />
+    <Compile Include="Assets\Scripts\Entity\Projectile\ProjectileBase.cs" />
+    <Compile Include="Assets\Scripts\Entity\Entity.cs" />
     <Compile Include="Assets\Scripts\PushTaskDestroy.cs" />
+    <Compile Include="Assets\Scripts\Entity\Ship\SpaceShip.cs" />
     <Compile Include="Assets\Scripts\ExplosionPlay.cs" />
-    <Compile Include="Assets\Scripts\LevelBoundary.cs" />
-    <Compile Include="Assets\Scripts\Powerup.cs" />
-    <Compile Include="Assets\Scripts\EntitySpawnerDebris.cs" />
-    <Compile Include="Assets\Scripts\PowerupStats.cs" />
     <Compile Include="Assets\Scripts\CollisionDamageApplicator.cs" />
-    <Compile Include="Assets\Scripts\TurretProperties.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\Destructible.cs" />
-    <Compile Include="Assets\Scripts\BackgroundElement.cs" />
+    <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Spawner\EntitySpawner.cs" />
+    <Compile Include="Assets\Scripts\Input\PointerClickHold.cs" />
     <Compile Include="Assets\Scripts\SingletonBase.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip.cs" />
     <Compile Include="Assets\Scripts\SyncTransform.cs" />
-    <Compile Include="Assets\Scripts\PowerupWeapon.cs" />
+    <Compile Include="Assets\Scripts\Controllers\MovementController.cs" />
+    <Compile Include="Assets\Scripts\Powerup\PowerupIndestructible.cs" />
+    <Compile Include="Assets\Scripts\Spawner\EntitySpawnerDebris.cs" />
     <Compile Include="Assets\Scripts\ImpactEffect.cs" />
-    <Compile Include="Assets\Scripts\VirtualJoystick.cs" />
-    <Compile Include="Assets\Scripts\PointerClickHold.cs" />
-    <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\FinishZone.cs" />
-    <Compile Include="Assets\Scripts\EntitySpawner.cs" />
+    <Compile Include="Assets\Scripts\Turret\TurretProperties.cs" />
+    <Compile Include="Assets\Scripts\Level\BackgroundElement.cs" />
+    <Compile Include="Assets\Scripts\Entity\Destructible.cs" />
+    <Compile Include="Assets\Scripts\Controllers\LevelBoundaryLimmiter.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Player.cs" />
+    <Compile Include="Assets\Scripts\Entity\Projectile\HomingProjectile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

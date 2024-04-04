@@ -1,7 +1,6 @@
 using UnityEngine;
-using Common;
 
-namespace Common
+namespace SpaceShooter
 {
     public class ImpactEffect : MonoBehaviour
     {
