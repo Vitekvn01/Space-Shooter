@@ -79,7 +79,7 @@
     <Compile Include="Assets\Scripts\SingletonBase.cs" />
     <Compile Include="Assets\Scripts\SyncTransform.cs" />
     <Compile Include="Assets\Scripts\Controllers\MovementController.cs" />
-    <Compile Include="Assets\Scripts\Powerup\PowerupIndestructible.cs" />
+    <Compile Include="Assets\Scripts\Powerup\powerupIndestructible.cs" />
     <Compile Include="Assets\Scripts\Spawner\EntitySpawnerDebris.cs" />
     <Compile Include="Assets\Scripts\ImpactEffect.cs" />
     <Compile Include="Assets\Scripts\Turret\TurretProperties.cs" />

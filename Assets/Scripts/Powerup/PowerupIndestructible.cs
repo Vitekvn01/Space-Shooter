@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SpaceShooter
@@ -11,5 +9,5 @@ namespace SpaceShooter
             ship.ApplyIndestructible(10);
         }
     }
-
 }
+
