@@ -34,7 +34,7 @@ public class ProjectileBase : Entity
 
             if (dest != null && dest != _parent)
             {
-                dest.ApplyDamge(_damage);
+                dest.ApplyDamage(_damage);
             }
 
             OnProjectileLifeEnd(hit.collider, hit.point);

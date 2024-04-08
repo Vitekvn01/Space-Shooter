@@ -23,7 +23,7 @@ namespace SpaceShooter
 
             if (destructible != null)
             {
-                destructible.ApplyDamge((int)_damageConstant +
+                destructible.ApplyDamage((int)_damageConstant +
                     (int)(_velocityDamageModifier * collision.relativeVelocity.magnitude));
             }
         }

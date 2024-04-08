@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Powerup\PowerupWeapon.cs" />
     <Compile Include="Assets\Scripts\Turret\Turret.cs" />
     <Compile Include="Assets\Scripts\Powerup\Powerup.cs" />
+    <Compile Include="Assets\Scripts\AI\AIController.cs" />
     <Compile Include="Assets\Scripts\Entity\Projectile\ProjectileBase.cs" />
     <Compile Include="Assets\Scripts\Entity\Entity.cs" />
     <Compile Include="Assets\Scripts\PushTaskDestroy.cs" />
@@ -80,7 +81,6 @@
     <Compile Include="Assets\Scripts\SingletonBase.cs" />
     <Compile Include="Assets\Scripts\SyncTransform.cs" />
     <Compile Include="Assets\Scripts\Controllers\MovementController.cs" />
-    <Compile Include="Assets\Scripts\Powerup\powerupIndestructible.cs" />
     <Compile Include="Assets\Scripts\Meteorite.cs" />
     <Compile Include="Assets\Scripts\Spawner\EntitySpawnerDebris.cs" />
     <Compile Include="Assets\Scripts\ImpactEffect.cs" />

@@ -38,7 +38,7 @@ namespace SpaceShooter
 
                 if (lb.LimitMode == LevelBoundary.Mode.Death)
                 {
-                    ship.ApplyDamge(10000);
+                    ship.ApplyDamage(10000);
                 }
             }
         }

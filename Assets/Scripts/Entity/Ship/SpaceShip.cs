@@ -81,8 +81,9 @@ namespace SpaceShooter
             base.OnDeath();
         }
 
-        private void Update()
+        protected override void Update()
         {
+            base.Update();
             if (_isSpeedUp == true)
             {
                 _timerSpeedUp += Time.deltaTime;

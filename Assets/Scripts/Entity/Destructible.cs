@@ -32,7 +32,7 @@ namespace SpaceShooter
             _currentHitPoints = _hitPoints;
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             if (_isTimerOffIndestructible == true)
             {
@@ -51,7 +51,7 @@ namespace SpaceShooter
 
         #region Public API
 
-        public void ApplyDamge(int damage)
+        public void ApplyDamage(int damage)
         {
             if (_indestructible) return;
 

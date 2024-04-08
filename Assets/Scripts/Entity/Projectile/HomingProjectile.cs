@@ -1,6 +1,7 @@
 using SpaceShooter;
 using UnityEditor;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class HomingProjectile : ProjectileBase
 {
@@ -8,6 +9,7 @@ public class HomingProjectile : ProjectileBase
     [SerializeField] private float _centerZoneFind;
     [SerializeField] private float _heightZoneFind;
     [SerializeField] private float _widthZoneFind;
+    [SerializeField] private float _timerFindTarget;
 
     [Header("Настройки взрыва")]
     [SerializeField] private GameObject _explosionPrefabs;
@@ -19,7 +21,7 @@ public class HomingProjectile : ProjectileBase
 
     private void Update()
     {
-        FindTarget();
+        
         float stepLength = Time.deltaTime * _velocity;
         Vector2 step = transform.up * stepLength;
 
@@ -40,10 +42,23 @@ public class HomingProjectile : ProjectileBase
         _timer += Time.deltaTime;
 
         if (_timer > _lifetime)
+        {
             OnProjectileLifeEnd(hit.collider, hit.point);
+        }
+
+        if (_timer >= _timerFindTarget)
+        {
+            FindTarget();
+        }
+
         if (_target != null)
         {
-            transform.position = Vector3.Slerp(transform.position, _target.position, stepLength/2);
+            // направление на цель
+            Vector3 direction = _target.position - transform.position;
+            // передаём в локальный "вверх" - Y
+            transform.up = direction.normalized * Time.deltaTime;
+
+            transform.position = Vector3.MoveTowards(transform.position, _target.position, stepLength);
         }
         else
         {
@@ -91,6 +106,7 @@ public class HomingProjectile : ProjectileBase
             _target = target;
             Debug.Log(target.name);
         }
+        else return;
     }
 
     private void Explosion(Vector2 pos, float radiusExplosion)
@@ -110,7 +126,7 @@ public class HomingProjectile : ProjectileBase
                 }
                 if (dest != _parent)
                 {
-                    dest.ApplyDamge((int)finalDamage);
+                    dest.ApplyDamage((int)finalDamage);
                 }
                 
             }
