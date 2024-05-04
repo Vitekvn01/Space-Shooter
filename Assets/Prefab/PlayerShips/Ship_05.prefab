@@ -621,6 +621,7 @@ MonoBehaviour:
       m_Calls: []
   _teamId: 2
   m_ScoreValue: 0
+  _previewImage: {fileID: 21300000, guid: bea6be8d792144e48bcfdb028b497b5b, type: 3}
   _mass: 1
   _thrust: 1000
   _mobility: 2000

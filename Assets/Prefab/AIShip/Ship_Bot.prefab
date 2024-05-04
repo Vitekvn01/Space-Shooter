@@ -549,6 +549,7 @@ GameObject:
   - component: {fileID: 5806912709416541881}
   - component: {fileID: 394125011480087412}
   - component: {fileID: 6240319353044632032}
+  - component: {fileID: -6090012086709850028}
   m_Layer: 0
   m_Name: Ship_Bot
   m_TagString: Untagged
@@ -623,6 +624,7 @@ MonoBehaviour:
       m_Calls: []
   _teamId: 1
   m_ScoreValue: 0
+  _previewImage: {fileID: 0}
   _mass: 1
   _thrust: 1000
   _mobility: 2000
@@ -632,7 +634,6 @@ MonoBehaviour:
   _turrets:
   - {fileID: 1455266673885463302}
   - {fileID: 5016403386890015407}
-  - {fileID: 6906169698902700383}
   _maxEnergy: 10
   _maxAmmo: 2
   _energyRegenPerSecond: 10
@@ -675,7 +676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _AIBehaviour: 1
-  _patrolPoint: {fileID: 0}
+  _patrolPoint: {fileID: -6090012086709850028}
   _navigationLinear: 0.4
   _navigationAngular: 0.5
   _randomSelectMovePointTime: 3
@@ -686,12 +687,25 @@ MonoBehaviour:
   _leadFactor: 1
   _isZoneFire: 0
   _distanceFire: 15
-  _isFindTargetInZoneDetection: 0
-  _distanceDetectionEnemy: 15
+  _isFindTargetInZoneDetection: 1
+  _distanceDetectionEnemy: 10
   _isMoveWaypoints: 0
   Waypoints: []
   _minDistanceToWaypoint: 2.5
   _stopBetweenWaypointsTime: 0
+--- !u!114 &-6090012086709850028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824931758300745770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f824598f686fa44ba387b0fd4d5c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Radius: 20
 --- !u!1 &5227403243648466588
 GameObject:
   m_ObjectHideFlags: 0

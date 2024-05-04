@@ -85,7 +85,7 @@ namespace SpaceShooter
 
         public void RestartLevel()
         {
-            SceneManager.LoadScene(_levelProperties.NextLevel.SceneName);
+            SceneManager.LoadScene(_levelProperties.SceneName);
         }
     }
 }

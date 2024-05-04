@@ -5,11 +5,9 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public abstract class SingletonBase<T> : MonoBehaviour where T : MonoBehaviour
 {
-    [Header("Singleton")]
-    [SerializeField] private bool _doNotDestroyOnLoad;
     public static T Instance { get; private set; }
 
-    protected virtual void Awake()
+    public void Init()
     {
         if (Instance != null)
         {
@@ -19,10 +17,5 @@ public abstract class SingletonBase<T> : MonoBehaviour where T : MonoBehaviour
         }
 
         Instance = this as T;
-
-        if (_doNotDestroyOnLoad)
-        {
-            DontDestroyOnLoad(gameObject);
-        }
     }
 }

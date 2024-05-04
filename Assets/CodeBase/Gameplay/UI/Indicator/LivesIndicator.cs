@@ -9,8 +9,14 @@ namespace SpaceShooter
     public class LivesIndicator : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _text;
+        [SerializeField] private Image _icon;
 
         private float _lastLives;
+
+        private void Start()
+        {
+            _icon.sprite = Player.Instance.ActiveShip.PreviewImage;
+        }
 
         private void Update()
         {

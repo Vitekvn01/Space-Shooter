@@ -23,6 +23,7 @@ namespace SpaceShooter
         private ShipInputController _shipInputController;
         private Transform _spawnPoint;
 
+        public FollowCamera FollowCamera => _cameraController;
         public void Construct(FollowCamera followCamera, ShipInputController shipInputController, Transform spawnPoint)
         {
             _cameraController = followCamera;
@@ -65,7 +66,7 @@ namespace SpaceShooter
 
         private void Respawn()
         {
-            var newPlayerShip = Instantiate(ShipPrefab);
+            var newPlayerShip = Instantiate(ShipPrefab, _spawnPoint.position, _spawnPoint.rotation);
 
             _ship = newPlayerShip.GetComponent<SpaceShip>();
 

@@ -9,29 +9,29 @@ namespace SpaceShooter
     public class LevelBuilder : MonoBehaviour
     {
         [Header("Prefabs")]
-        [SerializeField] private GameObject m_PlayerHUDPrefab;
-        [SerializeField] private GameObject m_LevelGUIPrefab;
-        [SerializeField] private GameObject m_BackgroundPrefab;
+        [SerializeField] private GameObject _playerHUDPrefab;
+        [SerializeField] private GameObject _levelGUIPrefab;
+        [SerializeField] private GameObject _backgroundPrefab;
 
         [Header("Dependencies")]
-        [SerializeField] private PlayerSpawner m_PlayerSpawner;
-        [SerializeField] private LevelBoundary m_LevelBoundary;
-        [SerializeField] private LevelController m_LevelController;
+        [SerializeField] private PlayerSpawner _playerSpawner;
+        [SerializeField] private LevelBoundary _levelBoundary;
+        [SerializeField] private LevelController _levelController;
 
         private void Awake()
         {
-            m_LevelBoundary.Init();
-            m_LevelController.Init();
+            _levelBoundary.Init();
+            _levelController.Init();
 
-            Player player = m_PlayerSpawner.Spawn();
+            Player player = _playerSpawner.Spawn();
 
             player.Init();
 
-            Instantiate(m_PlayerHUDPrefab);
-            Instantiate(m_LevelGUIPrefab);
+            Instantiate(_playerHUDPrefab);
+            Instantiate(_levelGUIPrefab);
 
-            GameObject background = Instantiate(m_BackgroundPrefab);
-            background.AddComponent<SyncTransform>().SetTarget(player.FollowCamera.transform);
+            GameObject background = Instantiate(_backgroundPrefab);
+            background.GetComponent<SyncTransform>().SetTarget(player.FollowCamera.transform);
 
         }
     }

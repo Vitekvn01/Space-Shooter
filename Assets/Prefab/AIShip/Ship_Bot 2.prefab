@@ -912,6 +912,7 @@ MonoBehaviour:
       m_Calls: []
   _teamId: 3
   m_ScoreValue: 0
+  _previewImage: {fileID: 0}
   _mass: 1
   _thrust: 1000
   _mobility: 2000
@@ -921,7 +922,6 @@ MonoBehaviour:
   _turrets:
   - {fileID: 1455266673885463302}
   - {fileID: 5016403386890015407}
-  - {fileID: 6906169698902700383}
   _maxEnergy: 10
   _maxAmmo: 2
   _energyRegenPerSecond: 10
@@ -974,9 +974,9 @@ MonoBehaviour:
   _shootDelay: 0.25
   _leadFactor: 1
   _isZoneFire: 0
-  _distanceFire: 15
-  _isFindTargetInZoneDetection: 0
-  _distanceDetectionEnemy: 15
+  _distanceFire: 10
+  _isFindTargetInZoneDetection: 1
+  _distanceDetectionEnemy: 10
   _isMoveWaypoints: 0
   Waypoints: []
   _minDistanceToWaypoint: 2.5

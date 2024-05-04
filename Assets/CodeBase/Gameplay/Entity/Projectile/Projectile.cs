@@ -7,7 +7,7 @@ namespace SpaceShooter
     {
         protected override void OnProjectileLifeEnd(Collider2D col, Vector2 pos)
         {
-            Instantiate(_impactEffectPrefab, pos, Quaternion.identity);
+            Instantiate(_impactEffectPrefab, transform.position, Quaternion.identity);
             base.OnProjectileLifeEnd(col, pos);
         }
 
@@ -21,8 +21,7 @@ namespace SpaceShooter
                     if (destructible.CurrentHitPoints <= 0)
                     {
                         Player.Instance.AddKill();
-                    }
-                    
+                    } 
                 }
             }
         }

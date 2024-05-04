@@ -8,6 +8,8 @@ namespace SpaceShooter
     public class SpaceShip : Destructible
     {
         [SerializeField] private Sprite _previewImage;
+
+        public Sprite PreviewImage => _previewImage;
         /// <summary>
         /// масса для Rigidbody
         /// </summary>
@@ -61,7 +63,7 @@ namespace SpaceShooter
 
         public float MaxAngularVelocity => _maxAngularVelocity;
         public float MaxLinearVelocity => _maxLinearVelocity;
-        public Sprite PreviewImage => _previewImage;
+        
 
         #endregion
 

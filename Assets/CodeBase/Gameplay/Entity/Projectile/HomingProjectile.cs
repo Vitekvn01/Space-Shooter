@@ -112,21 +112,21 @@ public class HomingProjectile : ProjectileBase
                 }
                 if (dest != _parent)
                 {
-
                     dest.ApplyDamage((int)finalDamage);
 
-                    if (dest.CurrentHitPoints <= 0)
+                    if (_parent == Player.Instance.ActiveShip)
                     {
-                        if (_parent == Player.Instance.ActiveShip)
-                        {
-                            Player.Instance.AddScore(dest.ScoreValue);
+                        Player.Instance.AddScore(dest.ScoreValue);
 
-                            if (dest is SpaceShip)
+                        if (dest is SpaceShip)
+                        {
+                            if (dest.CurrentHitPoints <= 0)
                             {
                                 Player.Instance.AddKill();
                             }
                         }
                     }
+                    
                 }
             }
         }

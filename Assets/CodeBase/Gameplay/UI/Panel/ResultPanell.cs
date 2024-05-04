@@ -23,7 +23,7 @@ namespace SpaceShooter
         [SerializeField] private TextMeshProUGUI _result;
         [SerializeField] private TextMeshProUGUI _buttonNextLevel;
 
-        private bool m_LevelPassed = false;
+        private bool _levelPassed = false;
 
         private void Start()
         {
@@ -43,7 +43,7 @@ namespace SpaceShooter
         {
             gameObject.SetActive(true);
 
-            m_LevelPassed = true;
+            _levelPassed = true;
 
             FillLevelStaistics();
 
@@ -80,7 +80,7 @@ namespace SpaceShooter
         {
             gameObject.SetActive(false);
 
-            if (m_LevelPassed == true)
+            if (_levelPassed == true)
             {
                     LevelController.Instance.LoadNextLevel();
             }
