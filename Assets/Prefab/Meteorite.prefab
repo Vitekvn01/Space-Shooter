@@ -79,6 +79,8 @@ MonoBehaviour:
   _eventOnDeath:
     m_PersistentCalls:
       m_Calls: []
+  _teamId: 0
+  m_ScoreValue: 5
   _debriseOnDestroy: 1
   _debriseMeteorits: {fileID: 2468639910126882930, guid: 917d05900d7a1eb4a83302eada19a2ce, type: 3}
   _debriseCount: 6
